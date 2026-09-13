@@ -18,8 +18,8 @@
 
      Los comentarios como este son instrucciones para ti. No los borres. -->
 
-<!-- PARA LA PERSONA, NO PARA EL AGENTE. Una SPEC.md por feature. Cópiala
-     vacía al proyecto y dile al agente «lee SPEC.md». Cuando la spec esté
+<!-- PARA LA PERSONA, NO PARA EL AGENTE. Una SPEC_TEMPLATE.md por feature. Cópiala
+     vacía al proyecto y dile al agente «lee .md». Cuando la spec esté
      cerrada, abre una sesión nueva y repite lo mismo: el agente que construye
      no debe arrastrar las dudas del que escribió. -->
 

@@ -8,3 +8,6 @@ data object Dog: NavKey
 
 @Serializable
 data class DogDetail(val id:Int): NavKey
+
+@Serializable
+data object AddDog: NavKey

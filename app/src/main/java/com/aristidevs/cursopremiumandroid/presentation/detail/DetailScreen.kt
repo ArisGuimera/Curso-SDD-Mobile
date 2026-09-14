@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -35,12 +37,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import coil3.compose.AsyncImage
 import com.aristidevs.cursopremiumandroid.R
 import com.aristidevs.cursopremiumandroid.domain.model.DogDetailModel
+import com.aristidevs.cursopremiumandroid.presentation.common.DogAvatar
 import com.aristidevs.cursopremiumandroid.ui.theme.BackgroundApp
 import com.aristidevs.cursopremiumandroid.ui.theme.BackgroundComponent
 import com.aristidevs.cursopremiumandroid.ui.theme.ControlColor
+import com.aristidevs.cursopremiumandroid.ui.theme.PrimaryButton
 import com.aristidevs.cursopremiumandroid.ui.theme.SecondaryText
 
 @Composable
@@ -54,12 +57,16 @@ fun DogDetailScreen(
         viewModel.loadDog(id)
     }
 
-    DogDetailContent(uiState, onBackSelected)
+    DogDetailContent(uiState, onBackSelected, onRetry = { viewModel.onRetry() })
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DogDetailContent(uiState: DogDetailUiState, onBackSelected: () -> Unit) {
+fun DogDetailContent(
+    uiState: DogDetailUiState,
+    onBackSelected: () -> Unit,
+    onRetry: () -> Unit
+) {
 
     val title = if (uiState is DogDetailUiState.Success) {
         uiState.dogDetail.name
@@ -93,7 +100,16 @@ fun DogDetailContent(uiState: DogDetailUiState, onBackSelected: () -> Unit) {
         ) {
             when (uiState) {
                 is DogDetailUiState.Error -> {
-                    Text(uiState.message)
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text(uiState.message, color = SecondaryText)
+                        Spacer(Modifier.height(16.dp))
+                        Button(
+                            onClick = onRetry,
+                            colors = ButtonDefaults.buttonColors(containerColor = PrimaryButton)
+                        ) {
+                            Text("Reintentar", color = Color.White)
+                        }
+                    }
                 }
 
                 DogDetailUiState.Loading -> {
@@ -116,14 +132,14 @@ fun DogDetailSuccessContent(dogDetail: DogDetailModel) {
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
     ) {
-        AsyncImage(
-            dogDetail.image,
-            contentDescription = "dog",
+        DogAvatar(
+            name = dogDetail.name,
+            image = dogDetail.image,
+            shape = RoundedCornerShape(16.dp),
+            initialFontSize = 96.sp,
             modifier = Modifier
                 .fillMaxWidth()
                 .height(260.dp)
-                .clip(RoundedCornerShape(16.dp)),
-            contentScale = ContentScale.Crop
         )
 
         Spacer(Modifier.height(24.dp))

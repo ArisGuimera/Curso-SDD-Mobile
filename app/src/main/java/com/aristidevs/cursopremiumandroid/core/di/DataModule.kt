@@ -3,6 +3,7 @@ package com.aristidevs.cursopremiumandroid.core.di
 import com.aristidevs.cursopremiumandroid.core.di.DogApiConfig.BASE_URL
 import com.aristidevs.cursopremiumandroid.data.DogRepositoryImpl
 import com.aristidevs.cursopremiumandroid.data.api.DogApiServices
+import com.aristidevs.cursopremiumandroid.data.db.DogDao
 import com.aristidevs.cursopremiumandroid.domain.DogRepository
 import dagger.Module
 import dagger.Provides
@@ -42,8 +43,8 @@ object DataModule {
 
     @Provides
     @Singleton
-    fun provideDogRepository(api: DogApiServices): DogRepository{
-        return DogRepositoryImpl(api)
+    fun provideDogRepository(api: DogApiServices, dao: DogDao): DogRepository{
+        return DogRepositoryImpl(api, dao)
     }
 }
 

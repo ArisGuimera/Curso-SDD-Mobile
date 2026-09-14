@@ -1,122 +1,134 @@
-# SPEC.md
+# SPEC: [nombre de la funcionalidad]
 
-<!-- PARA EL AGENTE. Este archivo es la especificación de una feature. Tu
-     tarea depende de si las secciones de abajo están vacías o completas:
+**Estado:** Borrador <!-- Borrador | En revisión | Aprobada -->
 
-     SI LAS SECCIONES ESTÁN VACÍAS, tu trabajo es completarlas conmigo, en
-     orden, una a la vez. En cada sección: primero busca en el repo lo que
-     puedas responder tú (rutas, patrones, qué existe ya) y muéstramelo.
-     Después hazme las preguntas que necesitas para el resto, de una en una.
-     No pases a la siguiente sección hasta que yo dé esta por cerrada. Cuando
-     terminemos, escribe el archivo completo. No escribas código.
+<!-- PARA LA PERSONA
+Copia esta plantilla como SPEC.md en una carpeta de la funcionalidad.
+Pide al agente que la complete contigo usando MOBILE_GUIDELINES.md.
+SPEC.md define qué debe cumplirse; PLAN.md desarrolla cómo implementarlo;
+TASKS.md organiza los pasos de ejecución.
+-->
 
-     SI LAS SECCIONES ESTÁN COMPLETAS, tu trabajo es construir la feature.
-     Antes de escribir código, dime qué te sigue pareciendo ambiguo. Cuando lo
-     aclaremos, implementa solo lo que está en el alcance y demuestra cada
-     criterio de aceptación con la evidencia que pide "Cómo se demuestra".
-     "Debería funcionar" no es evidencia.
+<!-- PARA EL AGENTE
+- Lee las instrucciones del proyecto y MOBILE_GUIDELINES.md. Inspecciona el
+  repositorio para comprobar el comportamiento actual. Si falta la guía, pide su ubicación.
+- Completa esta spec con la persona: investiga lo comprobable y consulta las
+  decisiones pendientes. Haz pocas preguntas por vez y actualiza las respuestas.
+- No inventes requisitos ni exclusiones. Distingue propuestas de decisiones
+  confirmadas y marca como PENDIENTE lo que aún no esté resuelto.
+- Aplica las consideraciones mobile relevantes sin ampliar el alcance automáticamente.
+- No incluyas diseño de clases, tablas, componentes, archivos o algoritmos:
+  esos detalles pertenecen a PLAN.md. Sí registra restricciones explícitas del pedido.
+- Mantén el documento breve y proporcional a la funcionalidad. Conserva los comentarios.
+- Un documento completo no está aprobado automáticamente. Solicita aprobación
+  antes de marcarlo como Aprobada. No implementes durante esta etapa.
+-->
 
-     Los comentarios como este son instrucciones para ti. No los borres. -->
+## Qué construimos y para quién
 
-<!-- PARA LA PERSONA, NO PARA EL AGENTE. Una SPEC_TEMPLATE.md por feature. Cópiala
-     vacía al proyecto y dile al agente «lee .md». Cuando la spec esté
-     cerrada, abre una sesión nueva y repite lo mismo: el agente que construye
-     no debe arrastrar las dudas del que escribió. -->
+<!-- Qué necesidad resolvemos, quién tiene esa necesidad y qué podrá hacer.
+Describe el objetivo en lenguaje de producto. -->
 
----
+[PENDIENTE]
 
+## Situación actual
 
-## Qué construimos
+<!-- Comportamiento actual relevante, limitación que queremos resolver y
+comportamientos existentes que deben conservarse. No describas la arquitectura. -->
 
-<!-- Una frase. Qué puede hacer el usuario que antes no podía.
-     Si necesitas dos frases, probablemente son dos features. -->
+[PENDIENTE]
 
+## Dentro del alcance
 
+<!-- Requisitos concretos, con identificadores estables para vincularlos a
+criterios, decisiones del plan y tareas. -->
+
+- **RF-01:** [PENDIENTE]
+- **RF-02:** [PENDIENTE]
 
 ## Fuera de alcance
 
-<!-- Va casi al principio a propósito: es lo que evita que el agente se invente
-     trabajo a mitad de camino. Si lo dejas vacío, llenará el vacío por su
-     cuenta y te enterarás en la review. -->
+<!-- Exclusiones acordadas, no deducidas por el agente. Si no hay exclusiones
+adicionales, indícalo tras revisarlo con la persona. -->
 
-- 
-- 
+- [PENDIENTE]
 
-## Cómo encaja en el proyecto
+## Flujo de usuario
 
-<!-- Esto lo saca el agente del repo. Exige rutas reales, no descripciones:
-     "sigue las convenciones del proyecto" no sirve de nada. -->
+<!-- Cómo se inicia, qué hace el usuario y qué resultado obtiene.
+Incluye pantallas afectadas, navegación y alternativas relevantes. -->
 
-**Dónde vive:**  <!-- módulo, carpeta, paquete -->
+1. [PENDIENTE]
+2. [PENDIENTE]
+3. [PENDIENTE]
 
-**Se apoya en:**  <!-- lo que YA existe y tiene que reutilizar, no duplicar -->
+## Datos y reglas de negocio
 
-**Sigue el patrón de:**  <!-- una feature parecida ya hecha, con su ruta -->
+<!-- Información que necesita el usuario, campos obligatorios, validaciones,
+límites y reglas como duplicados u orden de presentación. Describe significado
+y comportamiento, sin diseñar tablas, DTO, DAO ni almacenamiento. -->
 
-## Cómo está hecho por dentro
+- [PENDIENTE]
 
-<!-- Las decisiones que, si no las tomas tú, las toma el agente. Y las suyas
-     son siempre las más cómodas para él, no para tu proyecto. -->
+## Comportamiento mobile y casos alternativos
 
-**Capas que toca:**  <!-- UI, presentación, dominio, datos... y en qué orden fluye -->
+<!-- Adapta la tabla usando MOBILE_GUIDELINES.md. Añade escenarios relevantes.
+Marca No aplica con su motivo cuando corresponda. No presupongas soporte offline
+ni conservación de todo el estado. Expresa resultados, no mecanismos técnicos. -->
 
-**Qué se crea nuevo:**  <!-- clases, tablas, endpoints, pantallas. Con nombre -->
+| Situación | Comportamiento esperado |
+| --- | --- |
+| Carga o acción en curso | [PENDIENTE] |
+| Sin datos | [PENDIENTE] |
+| Entrada inválida | [PENDIENTE] |
+| Error o espera excesiva | [PENDIENTE] |
+| Sin conexión o conexión interrumpida | [PENDIENTE] |
+| Cancelar o volver atrás | [PENDIENTE] |
+| Pasar a segundo plano y regresar | [PENDIENTE] |
+| Recrear la pantalla | [PENDIENTE] |
+| Reabrir después de terminarse el proceso | [PENDIENTE] |
+| Otros puntos aplicables de la guía | [PENDIENTE] |
 
-**Qué se modifica:**  <!-- de lo que ya existe. Si hay un modelo compartido, avisa -->
+**Puntos de la guía no aplicables y motivo:** [PENDIENTE]
 
-**Contratos:**  <!-- forma de los datos que entran y salen: request, response, esquema -->
+## Restricciones del pedido
 
-**Prohibido:**  <!-- librerías nuevas, atajos entre capas, lo que no debe tocar aunque le tiente -->
+<!-- Condiciones ya impuestas: compatibilidad, límites de alcance, requisitos
+de accesibilidad o rendimiento medibles, o una tecnología expresamente exigida.
+Ejemplo: Usar Room puede ser una restricción; el diseño de entidades va en PLAN.md.
+No conviertas una preferencia del agente en una restricción. -->
 
-## Qué pasa cuando no sale bien
-
-<!-- El camino feliz lo resuelve cualquiera. Lo que vuelve como bug es esto.
-     Las últimas tres filas son la vida real de una app: pasan todos los días
-     en el bolsillo del usuario. Si alguna fila no aplica de verdad, escribe
-     "no aplica" y por qué; no la dejes vacía. -->
-
-| Situación | Qué tiene que pasar |
-|---|---|
-| No hay datos |  |
-| La entrada es inválida |  |
-| Falla algo de lo que depende |  |
-| Tarda demasiado |  |
-| No hay conexión (o se corta a mitad) |  |
-| El usuario sale de la app a mitad de camino |  |
-| El sistema mata el proceso y el usuario vuelve |  |
+- [PENDIENTE]
 
 ## Criterios de aceptación
 
-<!-- Cada uno se responde sí/no mirando la feature funcionando, sin interpretar.
-     Si para saber si está cumplido hace falta discutir, todavía no es un
-     criterio: pártelo en dos.
+<!-- Resultados observables que permitan decidir si se cumple cada requisito.
+Incluye los casos alternativos acordados. No uses Funciona correctamente.
+Repite el formato según sea necesario. -->
 
-       MAL   - [ ] El login funciona bien
-       BIEN  - [ ] Dado un email sin @, cuando presiono Entrar, entonces veo
-                   "Email no válido" bajo el campo y no se llama a la API -->
+- **CA-01 · RF-01:** Dado [contexto], cuando [acción], entonces [resultado observable].
+- **CA-02 · RF-02:** Dado [contexto], cuando [acción], entonces [resultado observable].
 
-- [ ] Dado ___, cuando ___, entonces ___.
-- [ ] Dado ___, cuando ___, entonces ___.
-- [ ] Dado ___, cuando ___, entonces ___.
+## Cómo se comprueba el comportamiento
 
-## Cómo se demuestra
+<!-- Una fila por criterio: escenario y resultado que debemos comprobar.
+La selección de tests, herramientas, comandos y evidencias se desarrolla en PLAN.md.
+No marques los criterios como superados durante la especificación. -->
 
-<!-- Una línea por criterio de arriba: qué evidencia prueba que se cumple.
-     Un test con nombre, una captura, un log, una grabación. Al menos uno
-     probado en un dispositivo real, no solo en el emulador o simulador. "Debería
-     funcionar" no es evidencia. -->
+| Criterio | Condiciones y pasos | Resultado esperado |
+| --- | --- | --- |
+| CA-01 | [PENDIENTE] | [PENDIENTE] |
+| CA-02 | [PENDIENTE] | [PENDIENTE] |
 
-- Criterio 1 → 
-- Criterio 2 → 
-- Criterio 3 → 
+## Decisiones pendientes
 
----
+<!-- Al resolverlas, actualiza las secciones afectadas. Escribe Ninguna cuando
+no queden pendientes funcionales ni restricciones por decidir. -->
 
-<!-- PARA EL AGENTE, ANTES DE DAR LA SPEC POR CERRADA, comprueba:
+- [PENDIENTE]
 
-     1. ¿"Fuera de alcance" tiene algo escrito? Si está vacío, no se decidió.
-     2. ¿Cada criterio se responde sí/no sin discutir?
-     3. ¿Todo lo de "Cómo encaja" tiene una ruta real del repo detrás?
-
-     Si alguna falla, vuelve a esa sección y pregunta. Si las tres pasan,
-     dímelo: la spec está lista para construir en una sesión nueva. -->
+<!-- ANTES DE SOLICITAR APROBACIÓN
+Comprueba que el alcance está acordado, los flujos son coherentes, los puntos
+mobile relevantes están cubiertos y cada requisito tiene criterios comprobables.
+Resuelve las dudas y los marcadores pendientes. Mantén el diseño técnico en PLAN.md.
+-->

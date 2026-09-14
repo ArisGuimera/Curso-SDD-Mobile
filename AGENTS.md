@@ -62,16 +62,25 @@ an Android build. Report any checks that could not run and the reason.
 
 ### Reference documents
 
-- `docs/SPEC_TEMPLATE.md`: read in full when creating or updating a feature
-  specification. Follow its embedded instructions, including the collaborative
-  process in Spanish. Copy it to the feature's `SPEC.md`, preserving its
-  structure. Do not rewrite the shared template for an individual feature.
+Each template carries its own instructions for the agent, its section
+structure, and its identifier scheme. Read the template in full and follow it;
+this file does not restate its content and must not contradict it.
+
+- `docs/SPEC_TEMPLATE.md`: copy to the feature's `SPEC.md` when creating or
+  updating a specification. It owns the spec's sections, its `RF-` requirement
+  and `CA-` acceptance-criteria identifiers, and its approval states.
+- `docs/PLAN_TEMPLATE.md`: copy to the feature's `PLAN.md` once the
+  specification is approved. It owns the plan's sections and approval states.
+  Reference requirements and criteria by their spec identifiers.
 - `docs/MOBILE_GUIDELINES.md`: consult when writing or reviewing requirements,
   acceptance criteria, the technical plan, and mobile validation. Consider
   lifecycle, state retention, connectivity, persistence, UI states, navigation
   and interruptions, forms, screen adaptation, accessibility, permissions,
   performance, background work, privacy, and internationalization. Apply only
   relevant items; clarify undefined product behavior instead of inventing it.
+
+Preserve each template's structure and its embedded comments in the copy. Do not
+rewrite the shared templates for an individual feature.
 
 ### Feature documents
 
@@ -85,22 +94,26 @@ Use an existing feature directory when continuing its work.
 
 ### Sequence
 
-1. **Specification:** clarify the user's intent and complete `SPEC.md`
-   collaboratively, section by section. Define scope, exclusions, behavior,
-   relevant mobile scenarios, and verifiable acceptance criteria. Give criteria
-   stable identifiers such as `AC-01`. Mark non-applicable sections `N/A` with
-   a reason. Do not implement while required decisions remain unresolved.
-2. **Plan:** write `PLAN.md` for the agreed specification. Describe affected
-   layers and files, data flow, UI state, navigation, dependencies, persistence
-   or migrations when applicable, implementation order, and validation.
-   Record whether subagents are needed and their bounded responsibilities;
-   do not assume delegation is required or available.
-3. **Tasks:** write `TASKS.md` as small, ordered, verifiable checkboxes. Give
-   each task an identifier, objective, scope, dependencies, relevant acceptance
-   criteria, and validation method. Keep tasks concise enough to execute and
-   detailed enough to determine when they are done.
+Each stage is gated by the previous document's state. A document is only
+`Aprobada`/`Aprobado` when the user says so: a complete document is not an
+approved one, and the agent never changes that state on its own.
+
+1. **Specification:** complete `SPEC.md` from `docs/SPEC_TEMPLATE.md`,
+   collaboratively and section by section, following the template's own
+   instructions. Do not start the plan until the user approves the spec.
+2. **Plan:** write `PLAN.md` from `docs/PLAN_TEMPLATE.md` for the approved
+   specification, following the template's own instructions. Additionally,
+   record whether subagents are needed and their bounded responsibilities; do
+   not assume delegation is required or available. Do not start tasks until
+   the user approves the plan.
+3. **Tasks:** derive `TASKS.md` from the approved plan. There is no shared
+   template for it, so this file defines it: small, ordered, verifiable
+   checkboxes, each with an identifier, objective, scope, dependencies, the
+   spec criteria it resolves, and its validation method. Keep tasks concise
+   enough to execute and detailed enough to determine when they are done.
 4. **Implementation:** execute the tasks within the agreed scope, preserving
-   the architecture below. Update task status as work progresses.
+   the architecture below. Authorization to implement must be explicit; it is
+   not implied by the documents' state. Update task status as work progresses.
 5. **Validation:** verify acceptance criteria with appropriate evidence and
    record the result in `TASKS.md`, including any outstanding checks.
 
